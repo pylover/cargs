@@ -4,14 +4,23 @@
 
 ```bash
 cargs example.com POST
+```
 
->>> -XPOST example.com
+Output:
+
+```bash
+-XPOST example.com
 ```
 
 ```bash
 cargs example.com POST foo=bar bar=baz
 
->>> -XPOST -Ffoo=bar -Fbar=baz example.com
+```
+
+Output:
+
+```bash
+-XPOST -Ffoo=bar -Fbar=baz example.com
 ```
 
 ```bash
