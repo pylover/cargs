@@ -85,3 +85,21 @@ def test_multipart():
         when(given + 'POST foo=bar baz=qux')
         assert status == 0
         assert stdout == '-XPOST -Ffoo=bar -Fbaz=qux example.com'
+
+
+def test_json():
+    with Given(app, 'example.com'):
+        assert status == 0
+        assert stdout == 'example.com'
+
+        when('-c json example.com post {foo: "bar"}')
+        assert status == 0
+        assert stdout == \
+            '-XPOST --data \'{"foo": "bar"}\' ' \
+            '-H"Content-Type: application/json" ' \
+            'example.com'
+
+
+if __name__ == '__main__':
+    from cargs import CArgs
+    CArgs.quickstart(['-cjson', 'foo.com', 'post', '{foo: "bar"}'])

@@ -59,7 +59,10 @@ class CArgs(Root):
 
         # Body
         if body:
-            items.append(f'--data "{body}"')
+#            if args.contenttype == 'json':
+#                items.append(f'--data {body}')
+
+            items.append(f'--data {body}')
 
         # Content Type
         if args.contenttype:

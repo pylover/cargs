@@ -2,15 +2,14 @@
 
 `curl` argument generator
 
-```bash
-cargs example.com POST
-```
-
-Output:
+## How to use
 
 ```bash
--XPOST example.com
+curl `cargs example.com PUT foo=bar bar=baz`
+curl `cargs example.com POST -c json {foo: "bar"}`
 ```
+
+### HTTP From
 
 ```bash
 cargs example.com POST foo=bar bar=baz
@@ -23,7 +22,9 @@ Output:
 -XPOST -Ffoo=bar -Fbar=baz example.com
 ```
 
+### Help?
+
 ```bash
-curl `cargs example.com PUT foo=bar bar=baz`
+cargs --help
 ```
 

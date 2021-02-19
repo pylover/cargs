@@ -1,3 +1,4 @@
 bddcli
 pytest-pudb
 ropevim
+ipython
